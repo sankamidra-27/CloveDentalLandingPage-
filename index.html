@@ -1,0 +1,946 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clove Dental Section</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: #fffaf6;
+    }
+    .logo {
+      font-size: 2.2rem;
+      color: #e87c27;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+    .logo span {
+      color: #6d4c1b;
+      font-size: 1rem;
+      font-weight: 400;
+      margin-left: 4px;
+      letter-spacing: 0;
+    }
+    .btn-orange {
+      background: #ff8c2a;
+      color: #fff;
+      border: none;
+      border-radius: 24px;
+      font-weight: 600;
+    }
+    .btn-orange:hover {
+      background: #e87c27;
+      color: #fff;
+    }
+    .phone {
+      background: #fff;
+      border: 2px solid #ff8c2a;
+      border-radius: 24px;
+      color: #222;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 0.5rem 1rem;
+    }
+    .doctor-img {
+      background: url('https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?fit=crop&w=400&q=80') center center/cover no-repeat;
+      border-radius: 12px;
+      box-shadow: 0 6px 32px rgba(0,0,0,0.12);
+      width: 330px;
+      height: 420px;
+      position: relative;
+    }
+    .left-overlay {
+      position: absolute;
+      left: 30px;
+      top: 60px;
+      background: rgba(255,255,255,0.94);
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+      max-width: 340px;
+    }
+    .left-overlay h2 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: #222;
+      margin-bottom: 0.5rem;
+    }
+    .left-overlay p {
+      color: #444;
+      margin-bottom: 1.1rem;
+    }
+    .stats-bar {
+      background: #fff;
+      border-top: 1px solid #f1e9e1;
+      font-weight: 500;
+      color: #222;
+    }
+    .stats-icon {
+      font-size: 2.1rem;
+      color: #ff8c2a;
+      margin-bottom: 0.2rem;
+    }
+    .stats-number {
+      font-size: 1.15rem;
+      font-weight: bold;
+      color: #222;
+    }
+    .stats-label {
+      font-size: 1rem;
+      color: #7d6c5f;
+    }
+    .captcha-box {
+      background: #3b2314;
+      color: #fff;
+      border-radius: 6px;
+      padding: 0.75rem 1.5rem;
+      font-size: 1.1rem;
+      border: none;
+      min-width: 70px;
+      text-align: center;
+    }
+        .treatment-card {
+      border: 1px solid #ffe2c8;
+      border-radius: 20px;
+      background: #fff;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.02);
+      overflow: hidden;
+      transition: box-shadow 0.2s;
+      height: 100%;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      padding: 0;
+    }
+    .treatment-card:hover {
+      box-shadow: 0 4px 24px rgba(255,140,42,0.10);
+    }
+    .treatment-img {
+      background: #fbeee4;
+      width: 180px;
+      height: 180px;
+      object-fit: contain;
+      border-radius: 0 20px 20px 0;
+      margin: 0 0 0 0;
+      display: block;
+    }
+    .treatment-content {
+      padding: 2rem 1.5rem;
+      flex: 1 1 auto;
+    }
+    .btn-orange {
+      background: #ff8c2a;
+      color: #fff;
+      border-radius: 24px;
+      font-weight: 600;
+      border: none;
+      transition: background 0.2s;
+    }
+    .btn-orange:hover {
+      background: #e87c27;
+      color: #fff;
+    }
+    .price-label {
+      color: #ff8c2a;
+      font-size: 0.97rem;
+      font-weight: 500;
+    }
+    @media (max-width: 991.98px) {
+      .treatment-card {
+        flex-direction: column;
+        align-items: stretch;
+        text-align: center;
+      }
+      .treatment-img {
+        width: 100%;
+        border-radius: 20px 20px 0 0;
+        margin: 0 auto;
+      }
+      .treatment-content {
+        padding: 1.5rem 1rem;
+      }
+    }
+    .review-card {
+    background: #fff;
+    border-radius: 1rem;
+    box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    padding: 1rem;
+    width: 250px;
+  }
+
+  .google-review-section {
+    background: #fff6f0;
+    padding: 3rem 0;
+  }
+
+  .clinic-grid .btn-outline-secondary {
+    width: 100%;
+    text-align: left;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 1rem;
+    padding: 1rem;
+  }
+
+  .clinic-grid .btn-outline-secondary svg {
+    width: 24px;
+    height: 24px;
+    margin-right: 0.5rem;
+  }
+
+  .img-rounded {
+    border-radius: 1rem;
+  }
+    .consult-box, .offer-box {
+    border: 1px solid #f0e6de;
+    border-radius: 1rem;
+    padding: 2rem;
+    background-color: #fff;
+    height: 100%;
+  }
+
+  .faq-section .accordion-button {
+    background-color: transparent;
+    font-weight: 500;
+    border: none;
+    padding-left: 0;
+  }
+
+  .faq-section .accordion-button::after {
+    margin-left: auto;
+    content: "+";
+    font-size: 1.25rem;
+    background-image: none !important;
+  }
+
+  .faq-section .accordion-button.collapsed::after {
+    transform: rotate(0);
+  }
+
+  .faq-section .accordion-item {
+    border: none;
+    border-bottom: 1px solid #ddd;
+  }
+
+  .btn-orange {
+    background-color: #ff7a00;
+    color: white;
+    border-radius: 1.5rem;
+    padding: 0.6rem 1.5rem;
+  }
+    .consult-offer-wrapper {
+    border: 1px solid #f1e5d9;
+    border-radius: 1rem;
+    padding: 2rem;
+    background-color: #fff;
+    height: 100%;
+  }
+
+  .form-control {
+    border-radius: 2rem;
+    padding: 0.6rem 1rem;
+  }
+
+  .btn-orange {
+    background-color: #ff7a00;
+    color: white;
+    border-radius: 2rem;
+    padding: 0.6rem 1.5rem;
+    border: none;
+  }
+
+  .btn-orange:hover {
+    background-color: #e86900;
+  }
+
+  .highlight-offer {
+    background: url('bg-pattern.png') no-repeat center center;
+    background-size: cover;
+    padding: 1.5rem;
+    border-radius: 1rem 0 0 1rem;
+    flex: 1;
+  }
+
+  .offer-detail {
+    padding: 1.5rem;
+    border-left: 1px solid #eee;
+    flex: 1;
+  }
+
+  .offer-box {
+    display: flex;
+    border: 1px solid #f1e5d9;
+    border-radius: 1rem;
+    overflow: hidden;
+    background-color: #fff;
+  }
+
+  .offer-box img {
+    max-width: 100%;
+    border-radius: 1rem;
+  }
+  </style>
+</head>
+<body>
+
+<!-- Header -->
+<header class="container-fluid py-3">
+  <div class="row align-items-center">
+    <div class="col-md-6 col-12">
+      <div class="logo">clove<span>:) DENTAL</span></div>
+    </div>
+    <div class="col-md-6 col-12 text-md-end">
+      <div class="d-flex align-items-center justify-content-end gap-3">
+        <button class="btn btn-orange px-4 py-2">Book Appointment</button>
+        <div class="phone">📞 985-6589-510</div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- Main Section -->
+<section class="container-fluid bg-white my-4 shadow">
+  <div class="row">
+    <!-- Left Panel -->
+    <div class="col-md-6 col-12 bg-light py-5 d-flex justify-content-center align-items-center position-relative">
+      <div class="doctor-img">
+        <div class="left-overlay">
+          <h2>Painless Root Canal Treatment in Delhi</h2>
+          <p>Expert RCT. Zero Pain. Right Here in Delhi.</p>
+          <button class="btn btn-orange px-4 py-2">Book Appointment</button>
+        </div>
+      </div>
+    </div>
+    <!-- Right Panel -->
+    <div class="col-md-6 col-12 py-5 px-4 px-md-5 bg-light bg-opacity-25">
+      <h3 class="mb-3">Get Expert Dental Guidance in Delhi</h3>
+      <p class="mb-4">Book your free consultation today and take the first step towards healthy, beautiful teeth.</p>
+      <form>
+        <div class="mb-3">
+          <input type="text" class="form-control" placeholder="Name" required>
+        </div>
+        <div class="mb-3">
+          <input type="tel" class="form-control" placeholder="Mobile Number" required>
+        </div>
+        <div class="mb-3 d-flex align-items-center gap-2">
+          <input type="text" class="form-control" placeholder="Captcha" required>
+          <div class="captcha-box">1514</div>
+        </div>
+        <div class="mb-3 form-check">
+          <input type="checkbox" class="form-check-input" id="agree">
+          <label class="form-check-label" for="agree">
+            I agree to CLOVE Dental's <a href="#">Terms</a> and <a href="#">Privacy Policy</a> and consent to contact via phone, email, or SMS.
+          </label>
+        </div>
+        <button type="submit" class="btn btn-orange w-100 py-3">Book a Free Consultation</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- Stats Bar -->
+<section class="container-fluid py-4 stats-bar">
+  <div class="row justify-content-around text-center">
+    <div class="col-auto stats-item">
+      <div class="stats-icon">🏥</div>
+      <div class="stats-number">600+</div>
+      <div class="stats-label">Clinics</div>
+    </div>
+    <div class="col-auto stats-item">
+      <div class="stats-icon">👨‍⚕️</div>
+      <div class="stats-number">1300+</div>
+      <div class="stats-label">Dentists</div>
+    </div>
+    <div class="col-auto stats-item">
+      <div class="stats-icon">😊</div>
+      <div class="stats-number">30 L+</div>
+      <div class="stats-label">Happy Patients</div>
+    </div>
+    <div class="col-auto stats-item">
+      <div class="stats-icon">🦷</div>
+      <div class="stats-number">35k+</div>
+      <div class="stats-label">Ortho Cases</div>
+    </div>
+    <div class="col-auto stats-item">
+      <div class="stats-icon">🔩</div>
+      <div class="stats-number">55k+</div>
+      <div class="stats-label">Implants Placed</div>
+    </div>
+  </div>
+</section>
+
+<div class="container py-5">
+    <h2 class="fw-bold text-center mb-2">Types of Root Canal Treatments</h2>
+    <p class="text-center mb-5" style="color:#555; font-size:1.1rem;">
+      In a root canal, the dentist removes infected pulp, cleans the tooth, and fills it with special material.
+    </p>
+    <div class="row g-4 justify-content-center">
+      <!-- Root Canal Treatment Card -->
+      <div class="col-lg-5 col-md-6">
+        <div class="treatment-card h-100">
+          <img src="https://pplx-res.cloudinary.com/image/private/user_uploads/73553032/8a4050f6-41ce-47fb-af9c-ca54592df451/image.jpg" alt="Root Canal" class="treatment-img d-none d-md-block">
+          <div class="treatment-content text-start">
+            <h5 class="fw-bold mb-1">Root Canal Treatment</h5>
+            <div class="mb-2" style="color:#555;">Ideal for infected or damaged tooth</div>
+            <div class="fw-semibold mb-1" style="font-size:1.05rem;">Types of RCT</div>
+            <ul class="mb-3" style="color:#444; padding-left:1.2em;">
+              <li>Root Canal Treatment</li>
+              <li>Split RCT</li>
+              <li>Split RCT with rubber dam</li>
+              <li>Split RCT with laser</li>
+            </ul>
+            <div class="mb-2 price-label">Starting Price</div>
+            <div class="fw-bold fs-5 mb-3">₹ 19,999</div>
+            <button class="btn btn-orange px-4 py-2">Get Free Consultation</button>
+          </div>
+        </div>
+      </div>
+      <!-- Re-Root Canal Treatment Card -->
+      <div class="col-lg-5 col-md-6">
+        <div class="treatment-card h-100">
+          <img src="https://pplx-res.cloudinary.com/image/private/user_uploads/73553032/8a4050f6-41ce-47fb-af9c-ca54592df451/image.jpg" alt="Re-Root Canal" class="treatment-img d-none d-md-block">
+          <div class="treatment-content text-start">
+            <h5 class="fw-bold mb-1">Re-Root Canal Treatment</h5>
+            <div class="mb-2" style="color:#555;">Ideal issues that persist or recur after an initial root canal treatment</div>
+            <div class="fw-semibold mb-1" style="font-size:1.05rem;">Types of RCT</div>
+            <ul class="mb-3" style="color:#444; padding-left:1.2em;">
+              <li>Re-RCT with rubber dam</li>
+              <li>Re-RCT laser specialist</li>
+              <li>e-RCT with retrieval of old RCT filling</li>
+            </ul>
+            <div class="mb-2 price-label">Starting Price</div>
+            <div class="fw-bold fs-5 mb-3">₹ 19,999</div>
+            <button class="btn btn-orange px-4 py-2">Get Free Consultation</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <section class="py-5 text-center bg-white">
+  <div class="container">
+    <h2 class="fw-bold mb-2">Real Smiles, Real Transformations</h2>
+    <p class="mb-5">See the life-changing results our dental implant patients enjoy</p>
+
+    <div class="row justify-content-center">
+      <!-- Arjun Mehta -->
+      <div class="col-6 col-sm-4 col-md-3 mb-4">
+        <div class="rounded overflow-hidden">
+          <img src="before-after-arjun.jpg" alt="Arjun Mehta" class="img-fluid rounded mb-2">
+        </div>
+        <div class="fw-semibold">Arjun Mehta</div>
+        <div class="text-warning small">Mumbai</div>
+      </div>
+
+      <!-- Kavita Sharma -->
+      <div class="col-6 col-sm-4 col-md-3 mb-4">
+        <div class="rounded overflow-hidden">
+          <img src="before-after-kavita.jpg" alt="Kavita Sharma" class="img-fluid rounded mb-2">
+        </div>
+        <div class="fw-semibold">Kavita Sharma</div>
+        <div class="text-warning small">Bangalore</div>
+      </div>
+
+      <!-- Neha Joshi -->
+      <div class="col-6 col-sm-4 col-md-3 mb-4">
+        <div class="rounded overflow-hidden">
+          <img src="before-after-neha.jpg" alt="Neha Joshi" class="img-fluid rounded mb-2">
+        </div>
+        <div class="fw-semibold">Neha Joshi</div>
+        <div class="text-warning small">Delhi</div>
+      </div>
+
+      <!-- Viram Desai -->
+      <div class="col-6 col-sm-4 col-md-3 mb-4">
+        <div class="rounded overflow-hidden">
+          <img src="before-after-viram.jpg" alt="Viram Desai" class="img-fluid rounded mb-2">
+        </div>
+        <div class="fw-semibold">Viram Desai</div>
+        <div class="text-warning small">Chennai</div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="py-5">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h4 class="fw-bold">Why Choose Clove Dental</h4>
+      <p class="text-muted">Clove Dental is India’s Leading dental care brand with 600+ clinic nationwide</p>
+    </div>
+
+    <div class="row align-items-center">
+      <!-- Text List -->
+      <div class="col-md-6">
+        <ul class="list-unstyled">
+          <li class="d-flex justify-content-between align-items-start mb-4">
+            <span>DORI - A.I. enabled Dental chair</span>
+            <span class="text-warning fw-bold fs-4">+</span>
+          </li>
+          <li class="d-flex justify-content-between align-items-start mb-4">
+            <span>10x Safety and 4 steps sterilization process</span>
+            <span class="text-warning fw-bold fs-4">+</span>
+          </li>
+          <li class="d-flex justify-content-between align-items-start mb-4">
+            <span>Experienced and Certified implantologist</span>
+            <span class="text-warning fw-bold fs-4">+</span>
+          </li>
+          <li class="d-flex justify-content-between align-items-start mb-4">
+            <span>Updated with world class equipments</span>
+            <span class="text-warning fw-bold fs-4">+</span>
+          </li>
+          <li class="d-flex justify-content-between align-items-start mb-4">
+            <span>Regular audits for safety protocols</span>
+            <span class="text-warning fw-bold fs-4">+</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Image -->
+      <div class="col-md-6 text-center">
+        <img src="clove-dental-doctors.jpg" alt="Clove Dental Team" class="img-fluid rounded-4">
+      </div>
+    </div>
+  </div>
+</section>
+<section class="py-5">
+  <div class="container">
+    <div class="text-center mb-4">
+      <h4 class="fw-bold">What Our Patients Say</h4>
+      <p class="text-muted mb-0">Real smiles, real stories. Here’s what our patients love about their CLOVE Dental experience!</p>
+    </div>
+
+    <div class="d-flex overflow-auto gap-3 pt-4 pb-2 px-1">
+      <!-- Card 1 -->
+      <div class="flex-shrink-0" style="width: 220px;">
+        <div class="card border-0 shadow-sm rounded-4">
+          <video controls class="card-img-top rounded-top-4" poster="poster-shubham.jpg">
+            <source src="shubham-video.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+          <div class="card-body text-center">
+            <h6 class="mb-0 fw-semibold">Shubham</h6>
+            <small class="text-muted">Indore</small><br>
+            <small class="text-warning">Aligners</small>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="flex-shrink-0" style="width: 220px;">
+        <div class="card border-0 shadow-sm rounded-4">
+          <video controls class="card-img-top rounded-top-4" poster="poster-shubpreet.jpg">
+            <source src="shubpreet-video.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+          <div class="card-body text-center">
+            <h6 class="mb-0 fw-semibold">Shubpreet</h6>
+            <small class="text-muted">Indore</small><br>
+            <small class="text-warning">RCT</small>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="flex-shrink-0" style="width: 220px;">
+        <div class="card border-0 shadow-sm rounded-4">
+          <video controls class="card-img-top rounded-top-4" poster="poster-anita.jpg">
+            <source src="anita-video.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+          <div class="card-body text-center">
+            <h6 class="mb-0 fw-semibold">Anita</h6>
+            <small class="text-muted">Bangalore</small><br>
+            <small class="text-warning">Laser Treatment</small>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="flex-shrink-0" style="width: 220px;">
+        <div class="card border-0 shadow-sm rounded-4">
+          <video controls class="card-img-top rounded-top-4" poster="poster-aarti.jpg">
+            <source src="aarti-video.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+          <div class="card-body text-center">
+            <h6 class="mb-0 fw-semibold">Aarti</h6>
+            <small class="text-muted">Indore</small><br>
+            <small class="text-warning">Dentures</small>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="flex-shrink-0" style="width: 220px;">
+        <div class="card border-0 shadow-sm rounded-4">
+          <video controls class="card-img-top rounded-top-4" poster="poster-aditya.jpg">
+            <source src="aditya-video.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+          <div class="card-body text-center">
+            <h6 class="mb-0 fw-semibold">Aditya</h6>
+            <small class="text-muted">Indore</small><br>
+            <small class="text-warning">Implant</small>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 6 -->
+      <div class="flex-shrink-0" style="width: 220px;">
+        <div class="card border-0 shadow-sm rounded-4">
+          <video controls class="card-img-top rounded-top-4" poster="poster-nikita.jpg">
+            <source src="nikita-video.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+          <div class="card-body text-center">
+            <h6 class="mb-0 fw-semibold">Nikita</h6>
+            <small class="text-muted">Indore</small><br>
+            <small class="text-warning">Aligners</small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="container my-5">
+  <!-- Appointment Booking Form -->
+  <div class="bg-light rounded-4 p-4 p-md-5 mb-5" style="background:#fff7ee !important;">
+    <form>
+      <div class="row align-items-center mb-3">
+        <div class="col-12 col-md-12 text-center mb-3">
+          <h4 class="fw-bold mb-0">Book an Appointment With Clove Dentist in Delhi</h4>
+        </div>
+        <div class="col-12 col-md-3 mb-2 mb-md-0">
+          <input type="text" class="form-control rounded-pill" placeholder="Name">
+        </div>
+        <div class="col-12 col-md-3 mb-2 mb-md-0">
+          <input type="text" class="form-control rounded-pill" placeholder="Phone">
+        </div>
+        <div class="col-12 col-md-3 mb-2 mb-md-0 d-flex">
+          <input type="text" class="form-control rounded-start-pill" placeholder="Captcha">
+          <span class="bg-dark text-white px-4 d-flex align-items-center rounded-end-pill" style="margin-left:-15px;">1514</span>
+        </div>
+        <div class="col-12 col-md-3 mt-2 mt-md-0">
+          <button type="submit" class="btn w-100 rounded-pill fw-semibold" style="background:#ff8c2a; color:#fff; height:48px;">Book Free Consultation</button>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12 d-flex align-items-center">
+          <input type="checkbox" id="agree" class="me-2" style="width:18px;height:18px;">
+          <label for="agree" class="form-label mb-0" style="font-size:0.97rem;">
+            I agree to CLOVE Dental's <a href="#">Terms</a> and <a href="#">Privacy Policy</a> and consent to contact via phone, email, or SMS.
+          </label>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <!-- Safety, Precision, and Innovation -->
+  <div class="text-center mb-2">
+    <h3 class="fw-bold">Safety, Precision, and Innovation</h3>
+    <div class="mb-4" style="color:#555; font-size:1.1rem;">
+      Advanced care with top safety, sterilization, and technology
+    </div>
+  </div>
+  <div class="row g-4">
+    <!-- Card 1 -->
+    <div class="col-md-4">
+      <div class="position-relative rounded-4 overflow-hidden" style="background:#f5f5f5;">
+        <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80" alt="Uncompromised Safety" class="w-100" style="height:270px;object-fit:cover;">
+        <div class="position-absolute bottom-0 start-0 w-100 px-4 py-4" style="background:rgba(15,30,45,0.92); border-radius:0 0 24px 24px;">
+          <div class="fw-bold text-white mb-1" style="font-size:1.2rem;">
+            Uncompromised Safety
+            <span class="d-inline-block align-middle ms-2" style="height:6px;width:70px;background:#ff8c2a;border-radius:3px;"></span>
+          </div>
+          <div class="text-white mb-3" style="font-size:1rem;">10X Safety Protocols for a secure and worry-free dental experience</div>
+          <a href="#" class="text-decoration-none text-white fw-semibold" style="font-size:1rem;">
+            <span class="me-2" style="color:#ff8c2a;"><i class="bi bi-lightbulb"></i></span>
+            Learn More <span style="color:#ff8c2a;">&rarr;</span>
+          </a>
+        </div>
+      </div>
+    </div>
+    <!-- Card 2 -->
+    <div class="col-md-4">
+      <div class="position-relative rounded-4 overflow-hidden" style="background:#f5f5f5;">
+        <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=600&q=80" alt="Assuring Cleanliness" class="w-100" style="height:270px;object-fit:cover;">
+        <div class="position-absolute bottom-0 start-0 w-100 px-4 py-4" style="background:rgba(15,30,45,0.92); border-radius:0 0 24px 24px;">
+          <div class="fw-bold text-white mb-1" style="font-size:1.2rem;">
+            Assuring Cleanliness
+            <span class="d-inline-block align-middle ms-2" style="height:6px;width:70px;background:#ff8c2a;border-radius:3px;"></span>
+          </div>
+          <div class="text-white mb-3" style="font-size:1rem;">Rigid 4-Step Sterilization process, assuring a safe &amp; spotless clinic.</div>
+          <a href="#" class="text-decoration-none text-white fw-semibold" style="font-size:1rem;">
+            <span class="me-2" style="color:#ff8c2a;"><i class="bi bi-lightbulb"></i></span>
+            Learn More <span style="color:#ff8c2a;">&rarr;</span>
+          </a>
+        </div>
+      </div>
+    </div>
+    <!-- Card 3 -->
+    <div class="col-md-4">
+      <div class="position-relative rounded-4 overflow-hidden" style="background:#f5f5f5;">
+        <img src="https://images.unsplash.com/photo-1520880867055-1e30d1cb001c?auto=format&fit=crop&w=600&q=80" alt="Experience AIPS" class="w-100" style="height:270px;object-fit:cover;">
+        <div class="position-absolute bottom-0 start-0 w-100 px-4 py-4" style="background:rgba(60,30,15,0.96); border-radius:0 0 24px 24px;">
+          <div class="fw-bold text-white mb-1" style="font-size:1.2rem;">
+            Experience <span style="color:#ff8c2a;">AIPS</span>
+            <span class="d-inline-block align-middle ms-2" style="height:6px;width:70px;background:#ff8c2a;border-radius:3px;"></span>
+          </div>
+          <div class="text-white mb-3" style="font-size:1rem;">Our AI-Powered Sterilization (AIPS) Monitoring system from DORI, USA. Exclusively at Clove</div>
+          <a href="#" class="text-decoration-none text-white fw-semibold" style="font-size:1rem;">
+            <span class="me-2" style="color:#ff8c2a;"><i class="bi bi-lightbulb"></i></span>
+            Learn More <span style="color:#ff8c2a;">&rarr;</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Google Reviews Section -->
+<section class="google-review-section text-center">
+  <div class="container">
+    <h4 class="fw-bold mb-4">Google Reviews</h4>
+    <div class="row justify-content-center align-items-center mb-5">
+      <div class="col-md-3 mb-3">
+        <div class="d-flex flex-column align-items-center">
+          <img src="google-logo.png" alt="Google Logo" style="width: 50px;">
+          <h3 class="fw-bold mt-2 mb-0 text-warning">★ 4.9</h3>
+          <div class="text-danger fw-bold">(1.6 Lakh +)</div>
+          <small class="text-muted">Verified Google Ratings</small>
+        </div>
+      </div>
+
+      <div class="col-md-9">
+        <div class="d-flex flex-wrap justify-content-center gap-3">
+          <!-- Review Card 1 -->
+          <div class="review-card text-start">
+            <div class="d-flex align-items-center mb-2">
+              <img src="neha.jpg" alt="Neha Singh" class="rounded-circle me-2" width="40" height="40">
+              <strong>Neha Singh</strong>
+              <img src="google-logo-small.png" class="ms-auto" width="20">
+            </div>
+            <div class="text-warning mb-1">★★★★★</div>
+            <p class="mb-0 small text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          </div>
+
+          <!-- Duplicate cards (you can reuse and change name/content if needed) -->
+          <div class="review-card text-start">
+            <div class="d-flex align-items-center mb-2">
+              <img src="neha.jpg" alt="Neha Singh" class="rounded-circle me-2" width="40" height="40">
+              <strong>Neha Singh</strong>
+              <img src="google-logo-small.png" class="ms-auto" width="20">
+            </div>
+            <div class="text-warning mb-1">★★★★★</div>
+            <p class="mb-0 small text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          </div>
+
+          <div class="review-card text-start">
+            <div class="d-flex align-items-center mb-2">
+              <img src="neha.jpg" alt="Neha Singh" class="rounded-circle me-2" width="40" height="40">
+              <strong>Neha Singh</strong>
+              <img src="google-logo-small.png" class="ms-auto" width="20">
+            </div>
+            <div class="text-warning mb-1">★★★★★</div>
+            <p class="mb-0 small text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Find Us Across India Section -->
+<section class="py-5 bg-white">
+  <div class="container">
+    <h5 class="fw-bold mb-1">Find Us Across India</h5>
+    <p class="text-muted mb-4">With over 500 clinics across India, you’re never too far from a Clove Dental clinic. Choose your preferred city to book an appointment.</p>
+
+    <div class="row">
+      <!-- Buttons -->
+      <div class="col-md-6">
+        <div class="clinic-grid row g-3">
+          <div class="col-6">
+            <button class="btn btn-outline-secondary">
+              Delhi/NCR <span class="text-muted">190 Clinics</span>
+            </button>
+          </div>
+          <div class="col-6">
+            <button class="btn btn-outline-secondary">
+              Bangalore <span class="text-muted">110 Clinics</span>
+            </button>
+          </div>
+          <div class="col-6">
+            <button class="btn btn-outline-secondary">
+              Mumbai <span class="text-muted">40 Clinics</span>
+            </button>
+          </div>
+          <div class="col-6">
+            <button class="btn btn-outline-secondary">
+              Chennai <span class="text-muted">59 Clinics</span>
+            </button>
+          </div>
+          <div class="col-6">
+            <button class="btn btn-outline-secondary">
+              Hyderabad <span class="text-muted">76 Clinics</span>
+            </button>
+          </div>
+          <div class="col-6">
+            <button class="btn btn-outline-secondary">
+              Punjab <span class="text-muted">27 Clinics</span>
+            </button>
+          </div>
+          <div class="col-6">
+            <button class="btn btn-outline-secondary">
+              Pune <span class="text-muted">76 Clinics</span>
+            </button>
+          </div>
+          <div class="col-6">
+            <button class="btn btn-outline-secondary">
+              Ahemdabad <span class="text-muted">27 Clinics</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Images -->
+      <div class="col-md-6">
+        <div class="row g-3">
+          <div class="col-6">
+            <img src="clinic1.jpg" alt="Clinic 1" class="img-fluid img-rounded">
+          </div>
+          <div class="col-6">
+            <img src="clinic2.jpg" alt="Clinic 2" class="img-fluid img-rounded">
+          </div>
+          <div class="col-6">
+            <img src="clinic3.jpg" alt="Clinic 3" class="img-fluid img-rounded">
+          </div>
+          <div class="col-6">
+            <img src="clinic4.jpg" alt="Clinic 4" class="img-fluid img-rounded">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="py-5">
+  <div class="container">
+    <div class="row g-4 align-items-stretch">
+      <!-- Left: Consultation Form -->
+      <div class="col-md-6">
+        <div class="consult-offer-wrapper">
+          <h5 class="fw-bold">Expert Guidance for Healthy Smiles</h5>
+          <p class="text-muted">Book your free consultation today and take the first step towards healthy, beautiful teeth.</p>
+          <form>
+            <div class="mb-3">
+              <input type="text" class="form-control" placeholder="Name" required>
+            </div>
+            <div class="mb-3">
+              <input type="tel" class="form-control" placeholder="Mobile Number" required>
+            </div>
+            <div class="form-check mb-3">
+              <input class="form-check-input" type="checkbox" id="agree" required>
+              <label class="form-check-label small" for="agree">
+                I agree to CLOVE Dental’s <a href="#">Terms</a> and <a href="#">Privacy Policy</a> and consent to contact via phone, email, or SMS.
+              </label>
+            </div>
+            <button type="submit" class="btn btn-orange w-100">Book a Free Consultation</button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Right: Offer Section -->
+      <div class="col-md-6">
+        <div class="offer-box">
+          <!-- Left side (Graphic & Highlight) -->
+          <div class="highlight-offer d-flex flex-column justify-content-between text-center text-md-start" style="background-color: #fff7ef;">
+            <div>
+              <div class="text-orange fw-bold mb-2 small">Creating Dental Awareness :)</div>
+              <h6 class="fw-bold">CLOVE DENTAL TURNS 14</h6>
+              <p class="small text-muted mb-1">Special thanks to our <strong>30 lakh valued customers</strong></p>
+              <div class="my-3">
+                <div class="fs-3 fw-bold text-dark">₹399/-</div>
+                <small class="text-muted">Dental Membership Plan</small>
+              </div>
+              <div class="fw-bold text-dark">₹5000/-</div>
+              <small class="text-muted">in dental treatments</small>
+            </div>
+            <img src="woman-smiling.png" alt="Smiling Woman" style="max-height: 120px; object-fit: contain;">
+          </div>
+
+          <!-- Right side (Offer Details) -->
+          <div class="offer-detail">
+            <h6 class="fw-bold">Dental Health Plan-Anniversary Plan</h6>
+            <ul class="small text-muted mb-3">
+              <li>₹1,700 treatment voucher redeemable against any dental procedure.</li>
+              <li>₹1,000 additional voucher for any treatment (Only one voucher per bill).</li>
+              <li>Unlimited dental consultations and 2D X-rays for an entire year.</li>
+            </ul>
+            <div class="d-flex justify-content-between align-items-center">
+              <div>
+                <small class="text-danger fw-bold">Special Offer</small><br>
+                <span class="fw-bold fs-5">₹399</span>
+                <del class="text-muted">₹5100</del>
+              </div>
+              <button class="btn btn-orange">Buy Now</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ Section -->
+<section class="py-5 faq-section bg-light">
+  <div class="container">
+    <h5 class="fw-bold text-center mb-4">Frequently Asked Questions</h5>
+    <div class="row row-cols-1 row-cols-md-2 g-4">
+      <!-- FAQ 1 -->
+      <div class="col">
+        <div class="accordion-item">
+          <button class="accordion-button collapsed" type="button">Can I choose the dentist on my own for treatment?</button>
+        </div>
+      </div>
+      <!-- FAQ 2 -->
+      <div class="col">
+        <div class="accordion-item">
+          <button class="accordion-button collapsed" type="button">What are your dental clinic timings?</button>
+        </div>
+      </div>
+      <!-- FAQ 3 -->
+      <div class="col">
+        <div class="accordion-item">
+          <button class="accordion-button collapsed" type="button">Will I get the same doctor each time I visit the same clinic?</button>
+        </div>
+      </div>
+      <!-- FAQ 4 -->
+      <div class="col">
+        <div class="accordion-item">
+          <button class="accordion-button collapsed" type="button">How can I book an appointment?</button>
+        </div>
+      </div>
+      <!-- FAQ 5 -->
+      <div class="col">
+        <div class="accordion-item">
+          <button class="accordion-button collapsed" type="button">How are you able to provide less prices than other dental brands?</button>
+        </div>
+      </div>
+      <!-- FAQ 6 -->
+      <div class="col">
+        <div class="accordion-item">
+          <button class="accordion-button collapsed" type="button">How frequently should I visit a dentist?</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
