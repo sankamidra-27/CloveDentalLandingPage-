@@ -22,6 +22,19 @@ body {
       border-radius: 24px;
       font-weight: 600;
     }
+     .btn-orange31 {
+    background-color: #FF7A1A;
+    color: white;
+    font-weight: 600;
+    border-radius: 50px;
+    padding: 8px 40px;
+    font-size: 16px;
+    width: 300px;
+    height:38px;
+          border: none;
+
+    white-space: nowrap;
+  }
     .btn-orange:hover {
       background: #e87c27;
       color: #fff;
@@ -55,6 +68,15 @@ body {
       box-shadow: 0 2px 8px rgba(0,0,0,0.06);
       max-width: 340px;
     }
+    .human-overlay-img {
+  position: inherit;
+  right: -190px; /* adjust based on image size and overlap */
+  height: 900px; /* adjust as needed */
+  z-index: 2;
+    transform: scaleX(-1); /* 👈 Flips the image horizontally */
+
+  margin: -624px 0px 0px 0px;
+}
     .left-overlay h2 {
       font-size: 1.2rem;
       font-weight: 700;
@@ -88,7 +110,6 @@ body {
     .captcha-box {
       background: #3b2314;
       color: #fff;
-      border-radius: 6px;
       padding: 0.75rem 1.5rem;
       font-size: 1.1rem;
       border: none;
@@ -192,7 +213,6 @@ body {
     .consult-box, .offer-box {
     border: 1px solid #f0e6de;
     border-radius: 1rem;
-    padding: 2rem;
     background-color: #fff;
     height: 100%;
   }
@@ -230,7 +250,7 @@ body {
     border: 1px solid #f1e5d9;
     border-radius: 1rem;
     padding: 2rem;
-    background-color: #fff;
+    background-color: #FFF9F4;
     height: 100%;
   }
 
@@ -254,8 +274,6 @@ body {
   .highlight-offer {
     background: url('bg-pattern.png') no-repeat center center;
     background-size: cover;
-    padding-right: 1rem;
-    border-radius: 1rem 0 0 1rem;
     flex: 1;
   }
 
@@ -272,10 +290,29 @@ body {
     overflow: hidden;
     background-color: #fff;
   }
-
+  .font-change{
+    font-family: 'Figtree', sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    padding-right: 10px;
+  }
+  .font-change2{
+    font-family: 'Figtree', sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    padding-bottom: 10px;
+  }
+.font-change5{
+    font-family: 'Figtree', sans-serif;
+    font-weight: 700;
+    font-size: 12px;
+}
+.container22{
+    max-width: 1250px;
+    margin-left: 24px;
+}
   .offer-box img {
     max-width: 100%;
-    border-radius: 1rem;
   }
   .phone-icon {
   width: 12px;
@@ -308,7 +345,6 @@ body {
     border-radius: 2rem;
     padding: 0.4rem 1rem;
     display: flex;
-    width:300px;
     align-items: center;
     gap: 0.5rem;
     font-weight: 500;
@@ -377,27 +413,37 @@ body {
     border-radius: 0;
   }
 
-  .captcha-box {
-    background-color: #4d2c1c;
-    color: white;
-    padding: 0.6rem 1rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 500;
-    font-size: 14px;
-    border-left: 1px solid #4d2c1c;
-  }
+.blurred-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: blur(2px);
+}
+
+.frosted-card {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  padding: 1.5rem 1rem;
+  width: 644px;
+  background: rgba(255, 255, 255, 0.45);
+  backdrop-filter: blur(4px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  text-align: left;
+}
+
   .br-orange{
     border: 1px solid #fcd9b1;
   }
   .metrics-bar {
   background-color: #fff7f0;
-  padding: 20px 0;
+  padding: 12px 0;
   overflow-x: auto;
   white-space: nowrap;
   -ms-overflow-style: none;  /* IE & Edge */
-  scrollbar-width: none;     /* Firefox */
+  scrollbar-width: none; 
+      /* Firefox */
 }
 
 .metrics-bar::-webkit-scrollbar {
@@ -523,6 +569,8 @@ body {
     border-radius: 12px;
     padding: 32px 24px;
     box-shadow: 0 0 8px rgba(0, 0, 0, 0.04); /* subtle shadow for better contrast */
+    margin-bottom:20px;
+
   }
 
   /* Input styling */
@@ -540,38 +588,77 @@ body {
 
   .captcha-code {
     position: absolute;
-    top: 4px;
+    top: 0px;
     right: 4px;
+    margin-right: 4px;
+    margin-bottom:19px;
     background-color: #4B2E1E;
     color: white;
-    border-radius: 25px;
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
     padding: 8px 20px;
     font-weight: 600;
     font-size: 16px;
-    height: 40px;
+    height: 48px;
     display: flex;
     align-items: center;
   }
 
-  .btn-orange {
+  .btn-orange3 {
     background-color: #FF7A1A;
     color: white;
     font-weight: 600;
-    border-radius: 25px;
-    padding: 10px 24px;
+    border-radius: 50px;
+    padding: 8px 40px;
     font-size: 16px;
-    width: 100%;
+    width: 300px;
+    height:38px;
+    white-space: nowrap;
   }
-
+  .form-check-input{
+    border-color: #FFE0C4
+    ;
+  }
+    .btn-orange {
+    background-color: #FF7A1A;
+    color: white;
+    font-weight: 600;
+    border-radius: 50px;
+    padding: 8px 40px;
+    font-size: 16px;
+    width: 164px;
+    height:38px;
+  }
+      .btn-orange4 {
+    background-color: #FF7A1A;
+    color: white;
+    font-weight: 600;
+    border-radius: 50px;
+    font-size: 16px;
+    padding: 10px;
+    border: none;
+  }
+   .btn-orange2 {
+    background-color: #FF7A1A;
+    color: white;
+    font-weight: 600;
+    border-radius: 50px;
+    padding: 8px 40px;
+    font-size: 16px;
+    width: 224px;
+    height:30px;
+  }
+  .text-clr {
+    color:#F58420;
+  }
   .form-check-label {
     font-size: 14px;
   }
 
   .cards-container {
   display: flex;
-  gap: 20px;
+  gap: 30px;
   justify-content: center;
-  flex-wrap: wrap;
 }
 
 .image-card {
@@ -587,17 +674,24 @@ body {
   height: 100%;
   object-fit: cover;
 }
+.info-box.aips {
+  background-color: #462512; /* Example: Light blue */
+  border: 2px solid #462512; /* Optional: Blue border */
+  color: #ffffff;            /* Optional: Dark text */
+  border-radius: 8px;
+  padding: 20px;
+}
+
 
 .info-box {
   position: absolute;
   bottom: 0;
-  width: 348px;
   height: 205px;
   background-color: #0a1a2f; /* dark blue background */
   color: white;
   padding: 20px;
   border-radius: 10px;
-  margin: 0 0 20px 20px;
+  margin: 20px 20px 20px 20px;
 }
 
 .info-box h3 {
@@ -611,11 +705,31 @@ body {
 }
 
 .line {
-  width: 133px;
+  width: 123px;
+    margin-left: 20px;
+  border-bottom: 10px solid orange;
+  border-radius:20px;
+}
+.line2 {
+  width: 138px;
   border-bottom: 10px solid orange;
   margin: 10px 0;
+  border-radius:20px;
 }
-
+.line3 {
+  width: 97px;
+  border-bottom: 10px solid orange;
+  margin: 10px 0;
+  border-radius:20px;
+  margin-left:40px;
+}
+.aips-font{
+    font-size: 30px;
+    margin-left: 5px;
+}
+.text-clr{
+    color:#F58420;
+}
 .info-box p {
   font-size: 14px;
   margin-bottom: 20px;
@@ -649,12 +763,6 @@ body {
   text-align: left;
   transition: 0.3s ease;
 }
-
-.clinic-btn:hover {
-  background-color: #f8f9fa;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-}
-
 .clinic-icon {
   width: 54px;
   height: 54px;
@@ -668,7 +776,9 @@ body {
 .faq-item:hover {
   background-color: #f9f9f9;
 }
-
+a{
+    color:#000000;
+}
 .faq-toggle {
   font-size: 20px;
   color: #ea7b28;
@@ -677,4 +787,74 @@ body {
 .footer-section a:hover {
   text-decoration: underline;
   color: #f7931e;
+}
+.font-design {
+  font-family: 'Figtree', sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+}
+.font-design2{
+    font-family: 'Figtree', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+}
+.bor-colour{
+    border:1px solid #fcd9b1;
+}
+.font-design4{
+    font-family: 'Figtree', sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+}
+.font-design6 {
+  font-family: 'Figtree', sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+}
+.padding-space{
+    margin-bottom: 18px;
+}
+.height-image{
+    height:220px;
+    width:310px;
+}
+
+.metrics-container {
+  white-space: nowrap;
+  overflow: hidden;
+  position: relative;
+}
+
+.scroll-track {
+  display: flex;
+}
+
+.scroll-content {
+  display: flex;
+  animation: scrollLeft 30s linear infinite;
+}
+
+.metric-item {
+  flex: 0 0 auto;
+  display: ruby;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 40px;
+}
+
+.metric-text {
+  text-align: center;
+  font-weight: bold;
+  font-size: 18px;
+  margin-top: 8px;
+}
+
+/* Animation keyframes */
+@keyframes scrollLeft {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
 }
