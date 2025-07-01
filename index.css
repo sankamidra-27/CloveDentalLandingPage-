@@ -858,3 +858,173 @@ a{
     transform: translateX(-50%);
   }
 }
+@media (max-width: 576px) {
+  .form-control {
+    font-size: 16px;
+    padding: 12px 14px;
+  }
+
+  .captcha-wrapper {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .captcha-box {
+    min-width: 80px;
+    text-align: center;
+    background-color: #4e2c1e;
+    color: #fff;
+    font-weight: 600;
+    border-radius: 0.5rem;
+  }
+
+  .btn-orange4 {
+    font-size: 16px;
+    padding: 12px;
+  }
+
+  .form-check-label {
+    font-size: 13px;
+  }
+
+  h3 {
+    font-size: 20px;
+  }
+
+  p {
+    font-size: 14px;
+  }
+}
+@media (max-width: 576px) {
+  .navbar-header .d-flex {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+  }
+
+  .logo img {
+    width: 140px;
+    margin-bottom: 8px;
+  }
+
+  .btn-orange31 {
+    font-size: 14px;
+    padding: 10px 16px;
+    width: 90%;
+    justify-content: center;
+  }
+
+  .phone-box {
+    font-size: 14px;
+    padding: 8px 12px;
+    background-color: #fff5eb;
+    border-radius: 8px;
+    width: 90%;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+  }
+
+  .phone-box img {
+    width: 18px;
+    margin-right: 6px;
+  }
+
+  .frosted-card {
+    position: static;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    margin-top: 10px;
+    text-align: center;
+  }
+
+  .frosted-card h5 {
+    font-size: 18px;
+  }
+
+  .frosted-card p {
+    font-size: 14px;
+  }
+
+  .human-overlay-img {
+    display: none; /* Hide large doctor image on mobile for better layout */
+  }
+
+  .blurred-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+}
+/* Scroll behavior on mobile only */
+@media (max-width: 576px) {
+  .scroll-container {
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+  }
+
+  .scroll-card {
+    min-width: 85%;
+    flex: 0 0 auto;
+    scroll-snap-align: start;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  }
+
+  .treatment-card {
+    flex-direction: column;
+    height: auto !important;
+  }
+
+  .treatment-card > div:first-child {
+    height: 200px;
+  }
+
+  .treatment-card img {
+    object-fit: cover;
+    height: 100%;
+  }
+
+  .btn-orange2 {
+    width: 100%;
+    font-size: 14px;
+    padding: 10px 16px;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+
+  p.text-center {
+    font-size: 14px;
+  }
+}
+@media (max-width: 576px) {
+  .scroll-row {
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+  }
+
+  .patient-card {
+    flex: 0 0 auto;
+    scroll-snap-align: start;
+    min-width: 240px;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  }
+
+  .scroll-row img {
+    object-fit: cover;
+    height: auto;
+  }
+
+  .scroll-row::-webkit-scrollbar {
+    display: none;
+  }
+}
